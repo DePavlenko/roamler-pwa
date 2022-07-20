@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/auth-context';
-import { Container, Stack, TextField, Typography, Button } from '@mui/material';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/auth-context";
+import { Container, Stack, TextField, Typography, Button } from "@mui/material";
 
 const Login = () => {
   const navigate = useNavigate();
   const { signIn } = useAuth();
-  const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
   const isValid = name.trim().length !== 0 && password.trim().length !== 0;
 
@@ -15,7 +15,7 @@ const Login = () => {
     event.preventDefault();
     if (isValid) {
       signIn();
-      navigate('/', { replace: true });
+      navigate("/", { replace: true });
     }
   };
 
@@ -28,8 +28,8 @@ const Login = () => {
       <Stack
         component="form"
         sx={{
-          width: '50ch',
-          mx: 'auto',
+          maxWidth: "50ch",
+          mx: "auto",
         }}
         spacing={2}
         noValidate
